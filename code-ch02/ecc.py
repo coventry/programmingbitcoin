@@ -1,3 +1,4 @@
+
 from unittest import TestCase
 
 
@@ -142,7 +143,7 @@ class Point:
 
     def __ne__(self, other):
         # this should be the inverse of the == operator
-        raise NotImplementedError
+        return not (self == other)
 
     def __repr__(self):
         if self.x is None:
@@ -165,7 +166,7 @@ class Point:
         # Case 1: self.x == other.x, self.y != other.y
         # Result is point at infinity
 
-        # Case 2: self.x ≠ other.x
+        # Case 2: self.x != other.x
         # Formula (x3,y3)==(x1,y1)+(x2,y2)
         # s=(y2-y1)/(x2-x1)
         # x3=s**2-x1-x2
